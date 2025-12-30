@@ -14,6 +14,10 @@ type Migration struct {
 }
 
 func (m Migration) Apply(ctx context.Context, db *gorm.DB) error {
+	err := db.AutoMigrate(&MigrationModel{})
+	if err != nil {
+		return err
+	}
 	if m.shouldRunMigration(db) {
 		err := m.MigrateFunc(ctx, db)
 		if err != nil {
