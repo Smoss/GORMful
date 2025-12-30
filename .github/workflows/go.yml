@@ -65,28 +65,21 @@ jobs:
       with:
         go-version: '1.25'
 
-    - name: Parse semantic version
-      id: semver
-      uses: semver/semver@v2.0.0
-      with:
-        version: ${{ github.ref_name }}
-        prefix: v
-
     - name: Build binaries
       env:
         GOOS: ${{ matrix.goos }}
         GOARCH: ${{ matrix.goarch }}
       run: |
         mkdir -p dist
-        go build -ldflags="-X main.version=${{ steps.semver.outputs.version }}" -o dist/gormful-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.ext }} ./cmd/GORMful
+        go build -o dist/gormful-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.ext }} ./cmd/GORMful
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ github.ref_name }}
-        name: Release ${{ steps.semver.outputs.version }}
+        name: Release ${{ github.ref_name }}
         body: |
-          Release ${{ steps.semver.outputs.version }}
+          Release ${{ github.ref_name }}
           
           ## Changes
           See the [CHANGELOG](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md) for details.
