@@ -6,7 +6,7 @@ package db_migrations
 import (
 	"context"
 
-	migration_models "github.com/GORMful/models"
+	migration_models "github.com/smoss/GORMful/models"
 	"gorm.io/gorm"
 )
 

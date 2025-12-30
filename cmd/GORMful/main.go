@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/GORMful/models"
 	"github.com/google/uuid"
+	"github.com/smoss/GORMful/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
