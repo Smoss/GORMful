@@ -37,6 +37,8 @@ func main() {
 		log.Fatalf("Failed to get database: %v", err)
 	}
 
+	createMigrationModel(db)
+
 	switch os.Args[1] {
 	case "create-migration":
 		createMigrationFlags.Parse(os.Args[2:])
