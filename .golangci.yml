@@ -6,20 +6,7 @@ formatters:
   settings:
     gofmt:
       simplify: false
-      rewrite-rules:
-        - pattern: 'interface{}'
-          replacement: 'any'
-        - pattern: 'a[b:len(a)]'
-          replacement: 'a[b:]'
     
     golines:
       max-len: 80
       tab-len: 4
-      # Shorten single-line comments.
-      # Default: false
-      shorten-comments: false
-      # Default: true
-      reformat-tags: false
-      # Split chained methods on the dots as opposed to the arguments.
-      # Default: true
-      chain-split-dots: false
