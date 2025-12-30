@@ -1,4 +1,4 @@
-module github.com/GORMful
+module github.com/smoss/GORMful
 
 go 1.25.5
 

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/GORMful/models"
 	"github.com/google/uuid"
+	"github.com/smoss/GORMful/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -79,4 +79,8 @@ func getDB(dbHost string, dbUser string, dbPassword string, dbName string, dbPor
 		return nil, err
 	}
 	return db, nil
+}
+
+func createMigrationModel(db *gorm.DB) {
+	db.AutoMigrate(&models.MigrationModel{})
 }
