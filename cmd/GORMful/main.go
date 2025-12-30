@@ -80,3 +80,7 @@ func getDB(dbHost string, dbUser string, dbPassword string, dbName string, dbPor
 	}
 	return db, nil
 }
+
+func createMigrationModel(db *gorm.DB) {
+	db.AutoMigrate(&models.MigrationModel{})
+}
