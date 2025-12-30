@@ -1,4 +1,4 @@
-package migrationModels
+package models
 
 var MigrationTemplate = `
 package db_migrations

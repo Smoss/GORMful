@@ -1,4 +1,4 @@
-package migrationModels
+package models
 
 import (
 	"context"

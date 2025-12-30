@@ -1,4 +1,4 @@
-package migrationModels
+package models
 
 // MigrationModel is a model for the migration table
 // It is used to track the migrations that have been applied to the database
